@@ -4,13 +4,13 @@ A small Todo-list project with drag and drop functionality, built as practice fo
 
 ## Tech used
 
--React
--Javascript/Typescript
--Paper css
--dnd-kit
+- React
+- Javascript/Typescript
+- Paper css
+- dnd-kit
 
 ## Features
 
--Adding new tasks(todos)
--Moving them between in-progress, done and to-do
--Deleting todos
+- Adding new tasks(todos)
+- Moving them between in-progress, done and to-do
+- Deleting todos
