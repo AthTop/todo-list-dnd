@@ -14,13 +14,6 @@ interface Todo {
   status: "to-do" | "in-progress" | "done";
 }
 
-const todos: Todo[] = [
-  { id: 1, text: "buy milk", status: "to-do" },
-  { id: 2, text: "wash bike", status: "in-progress" },
-  { id: 3, text: "do the budget", status: "done" },
-  { id: 4, text: "call jane", status: "to-do" },
-];
-
 function App() {
   return (
     <>
@@ -33,7 +26,7 @@ function App() {
 export default App;
 
 function TodoList() {
-  const [todos, setTodos] = useLocalStorage("todos");
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
   const todoTodos = todos.filter((todo) => todo.status === "to-do");
   const inProgressTodos = todos.filter((todo) => todo.status === "in-progress");
   const doneTodos = todos.filter((todo) => todo.status === "done");
@@ -64,7 +57,7 @@ function TodoList() {
 
   function addTodo(text: string): void {
     const newTodo = {
-      id: todos.length,
+      id: Date.now(),
       text: text,
       status: "to-do" as Todo["status"],
     };
